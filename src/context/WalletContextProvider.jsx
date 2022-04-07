@@ -28,20 +28,6 @@ export const WalletContextProvider = (props) => {
       <div>
         <input type="text" onChange={(e) => setPassword(e.target.value)} />
         <input type="text" onChange={(e) => setLogin(e.target.value)} />
-        {/* <button
-          onClick={(e) => {
-            doLogin();
-          }}
-        >
-          Login
-        </button> */}
-        {/* <button
-          onClick={() => {
-            setIsLoggedIn(isLoggedIn);
-          }}
-        >
-          Logout
-        </button> */}
       </div>
       {props.children}
     </WalletContext.Provider>
