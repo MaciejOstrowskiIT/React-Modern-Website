@@ -26,12 +26,12 @@ const Wallet = () => {
   const changeThemeToDark = () => {
     document.body.style.color = themeContextValue.dark.foreground;
     document.body.style.backgroundColor = themeContextValue.dark.background;
-    setActiveTheme = "BLACK";
+    setActiveTheme("DARK");
   };
   const changeThemeToWhite = () => {
     document.body.style.color = themeContextValue.light.foreground;
     document.body.style.backgroundColor = themeContextValue.light.background;
-    setActiveTheme = "WHITE";
+    setActiveTheme("WHITE");
   };
 
   return (
