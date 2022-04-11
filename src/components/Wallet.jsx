@@ -26,7 +26,7 @@ const Wallet = () => {
   const changeThemeToDark = () => {
     document.body.style.color = themeContextValue.dark.foreground;
     document.body.style.backgroundColor = themeContextValue.dark.background;
-    setActiveTheme("DARK");
+    setActiveTheme("BLACK");
   };
   const changeThemeToWhite = () => {
     document.body.style.color = themeContextValue.light.foreground;
