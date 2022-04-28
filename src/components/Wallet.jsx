@@ -5,6 +5,7 @@ import { WalletContext } from "../context/WalletContextProvider";
 
 const Wallet = () => {
   const [activeTheme, setActiveTheme] = useState("");
+  const [activeButton, setActiveButton] = useState(true);
 
   useEffect(() => {
     document.title = `${activeTheme}`;
@@ -27,11 +28,13 @@ const Wallet = () => {
     document.body.style.color = themeContextValue.dark.foreground;
     document.body.style.backgroundColor = themeContextValue.dark.background;
     setActiveTheme("BLACK");
+    setActiveButton(!activeButton);
   };
   const changeThemeToWhite = () => {
     document.body.style.color = themeContextValue.light.foreground;
     document.body.style.backgroundColor = themeContextValue.light.background;
     setActiveTheme("WHITE");
+    setActiveButton(!activeButton);
   };
 
   return (
@@ -43,7 +46,16 @@ const Wallet = () => {
       {orderContextValue.isLoggedIn && <p>Logged</p>}
       <button onClick={() => handleLogin()}> Handle Login Wallet</button>
       <button onClick={() => handleLogout()}> Handle Logout Wallet</button>
+      {/* <button onClick={() => changeThemeToWhite()}> White Theme</button>
+      <button onClick={() => changeThemeToDark()}> Dark Theme</button> */}
       <button onClick={() => changeThemeToWhite()}> White Theme</button>
+      <button
+        onClick={() =>
+          activeButton ? changeThemeToWhite() : changeThemeToDark()
+        }
+      >
+        {activeButton ? "White" : "Dark"}
+      </button>
       <button onClick={() => changeThemeToDark()}> Dark Theme</button>
     </div>
   );
